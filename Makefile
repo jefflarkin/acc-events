@@ -1,7 +1,7 @@
-CC=pgcc
-FC=pgfortran
+CC=nvc
+FC=nvfortran
 PIC=-fpic
-FFLAGS=-fast -ta=tesla -Minfo=accel
+FFLAGS=-fast -acc=gpu -Minfo=accel
 
 test: libacctool.so laplace2d.parallel.f90 jacobi.f90
 	$(FC) $(FFLAGS) -o test laplace2d.parallel.f90 jacobi.f90
